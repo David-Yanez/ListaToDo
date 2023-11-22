@@ -3,6 +3,6 @@ import './CreateTodoButton.css'
 
 export const CreateTodoButton = () => {
   return (
-    <button>Crear</button>
+    <button >Crear</button>
   )
 }

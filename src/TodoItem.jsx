@@ -3,7 +3,7 @@ import './TodoItem.css'
 
 export const TodoItem = (props) => {
 
-  console.log(props.completed)
+ 
   return (
     <li>
         <p className={`${props.completed && "Icon-check--active"}`}>V</p>

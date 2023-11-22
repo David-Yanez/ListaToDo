@@ -1,8 +1,12 @@
 import React from 'react'
 import './TodoSearch.css'
 
-export const TodoSearch = () => {
+export const TodoSearch = ({searchValue, setSearchValue}) => {
+
+
   return (
-    <input placeholder='Cortar cebolla' />
+    <input 
+    value={searchValue}
+    onChange={e =>  setSearchValue(e.target.value)} placeholder='Buscar' />
   )
 }
