@@ -1,7 +1,8 @@
 import React from 'react'
+import './TodoCouter.css'
 
-export const TodoCounter = () => {
+export const TodoCounter = ({total, completed}) => {
   return (
-    <h1>Has completado 3 de 5 TODOS</h1>
+    <h1>Has completado {completed} de {total} TODOS</h1>
   )
 }

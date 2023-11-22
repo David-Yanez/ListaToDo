@@ -1,0 +1,27 @@
+button{
+  /*  position: fixed;
+    bottom: 46px;*/
+  
+margin-top: 30px;
+width: 150px;
+height: 35px;
+
+  
+    border-radius: 50px;
+    background: linear-gradient(145deg, #d8d8d8, #ffffff);
+     box-shadow:  5px 5px 10px #d3d3d3,
+    -5px -5px 10px #ffffff;
+
+ /*outline: none; */
+border: none;
+font-size: 1.3rem;
+                        }
+
+  button:hover {
+
+ width: 160px;
+ height: 40px;
+    animation: desliza 1s 0.5s 2 linear, desaparece 1s 0.5s 2 linear;
+    cursor: hand;
+    cursor: pointer;
+     }
