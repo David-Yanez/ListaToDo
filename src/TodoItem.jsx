@@ -6,9 +6,9 @@ export const TodoItem = (props) => {
  
   return (
     <li>
-        <p className={`${props.completed && "Icon-check--active"}`}>V</p>
+        <p onClick={props.onComplete} className={`${props.completed && "Icon-check--active"}`}>V</p>
         <p className={`${props.completed && "TodoItem-p--complete"}`}>{props.text}</p>
-        <p className='Icon-delete'>X</p>
+        <p onClick={props.onDelete} className='Icon-delete'>X</p>
     </li>
   )
 }
