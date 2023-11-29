@@ -14,24 +14,45 @@ const defaultTodos = [
   {text: 'Cocinar el almuerzo', completed:true},
 ]
 
+/*const StringifiedTodos = JSON.stringify(defaultTodos)
+localStorage.setItem('TODOS_V1', StringifiedTodos)
+localStorage.removeItem('TODOS_V1')*/
+
 
 function App() {
+  const localStorageTodos = localStorage.getItem('TODOS_V1')
+ 
+  let parsedTodos
+  if (!localStorageTodos){
+    localStorage.setItem('TODOS_V1', JSON.stringify([]))
+    parsedTodos = []
+  } else {
+    parsedTodos = JSON.parse(localStorageTodos)
+  }
 
-  const [todos, setTodos] = useState(defaultTodos)
+
+  const [todos, setTodos] = useState(parsedTodos)
   const [searchValue, setSearchValue] =React.useState("");
 // !! convierte cualquier dato a true o false (true = cualqueir valor diferente de 0, -1, null, undefine, etc)
   const completedTodos = todos.filter(todo => !!todo.completed).length
-  console.log(completedTodos)
+
   const totalTodos = todos.length
 
   const searchedTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
+
+
+  const saveTodos = (newTodos) =>{
+    localStorage.setItem('TODOS_V1', JSON.stringify(newTodos))
+    setTodos(newTodos)
+  }
+
 
   const completeTodo = (text) =>{
     const newTodos = [...todos]
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text )
     newTodos[todoIndex].completed = true
-    setTodos(newTodos)
+    saveTodos(newTodos)
   }
 
   const deleteTodo = (text) =>{
@@ -39,7 +60,7 @@ function App() {
     const todoIndex = newTodos.findIndex(
       (todo) => todo.text === text )
       newTodos.splice(todoIndex, 1)
-    setTodos(newTodos)
+      saveTodos(newTodos)
   }
 
   return (
