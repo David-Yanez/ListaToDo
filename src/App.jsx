@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { TodoCounter } from "./TodoCounter/TodoCounter"
 import { TodoSearch } from "./TodoSearch/TodoSearch"
 import { TodoList } from "./TodoList/TodoList"
@@ -6,6 +6,7 @@ import { TodoItem } from "./TodoItem/TodoItem"
 import { CreateTodoButton } from "./CreateTodoButton/CreateTodoButton"
 import './App.css'
 import { useLocalStorage } from './Hooks/useLocalStorege'
+import { TodosLoading } from './TodosLoading/TodosLoading'
 
 const defaultTodos = [
   {text: 'Cortar cebolla', completed:false},
@@ -23,10 +24,17 @@ localStorage.removeItem('TODOS_V1')*/
 function App() {
  
 
-  const [todos, saveTodos] = useLocalStorage('TODOS_V1', [])
+  const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] =React.useState("");
 // !! convierte cualquier dato a true o false (true = cualqueir valor diferente de 0, -1, null, undefine, etc)
   const completedTodos = todos.filter(todo => !!todo.completed).length
+
+  console.log('log 1')
+ 
+ useEffect(() =>{
+  console.log('Log 2')
+ },[searchValue])  
+  console.log('log 3')
 
   const totalTodos = todos.length
 
@@ -58,6 +66,10 @@ function App() {
       setSearchValue={setSearchValue}/>
 
       <TodoList>
+        {loading && <TodosLoading/>}
+        {error && <p>hubo un error</p>}
+        {(!loading && searchedTodos.length == 0) && <p>Crea tu primer Todo !!</p>}
+
         {searchedTodos.map(todo => 
         <TodoItem 
         key={todo.text} 
