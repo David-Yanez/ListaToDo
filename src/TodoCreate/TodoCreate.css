@@ -1,0 +1,79 @@
+form {
+    border-radius: 50px;
+    
+  
+    border-radius: 50px;
+    background: #f0f0f0;
+    box-shadow:  20px 20px 60px #1b1e23,
+                 -20px -20px 60px #25282f;
+                               
+
+   padding:33px 40px;
+   display: flex;
+   flex-direction: column;     
+   width: 90%;      
+   max-width: 300px;   
+   justify-content: center;
+   align-items: center;
+}
+
+textarea{
+
+    background: #f0f0f0;
+    box-shadow: inset 5px 5px 2px #c7c7c7,
+                inset -5px -5px 2px #ffffff;
+
+    height:96px;
+    width:calc(100% - 25px);
+    border:1px solid #f0f0f0;
+    border-radius: 6px;
+    text-align:center;
+    margin-top: 30px;
+    padding-top: 10px;
+
+
+}
+
+.Modal-title {
+   /* border-radius: 50px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow:  16px 16px 31px #bebebe,
+                 -16px -16px 31px #ffffff;  */
+
+                 border-radius: 50px;
+                 background: #f0f0f0;
+                 box-shadow:  7px 7px 9px #808080,
+                              -7px -7px 9px #ffffff;
+    font-size: 1.3rem;
+   padding: 10px 15px;
+}
+
+.TodoForm-buttons{
+
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+
+ 
+}
+
+.TodoCrear-button-cancel{
+    border-radius: 50px;
+    background: #e58585;
+    box-shadow:  7px 7px 9px #808080,
+                 -7px -7px 9px #ffffff;
+    margin-right: 20px;
+    border: none;
+    font-size: 1rem;
+}
+
+.TodoCrear-button-add{
+    margin-left: 20px;
+    border-radius: 50px;
+    background: #96d9a1;
+    box-shadow:  7px 7px 9px #808080,
+                 -7px -7px 9px #ffffff;
+    
+    border: none;
+    font-size: 1rem;
+}

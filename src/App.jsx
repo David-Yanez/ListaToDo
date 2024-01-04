@@ -7,6 +7,8 @@ import { CreateTodoButton } from "./CreateTodoButton/CreateTodoButton"
 import './App.css'
 import { TodosLoading } from './TodosLoading/TodosLoading'
 import { TodoContext, TodoProvider } from './TodoContext/TodoContext'
+import { Modal } from './Modal/modal'
+import { TodoCreate } from './TodoCreate/TodoCreate'
 
 const defaultTodos = [
   {text: 'Cortar cebolla', completed:false},
@@ -28,7 +30,9 @@ function App() {
   error,
   searchedTodos,
   completeTodo,
-  deleteTodo
+  deleteTodo,
+  openModal,
+  setOpenModal
 } = useContext(TodoContext)
 
   return (
@@ -46,6 +50,7 @@ function App() {
       {searchedTodos.map(todo => 
       <TodoItem 
       key={todo.text} 
+
       text={todo.text} 
       completed={todo.completed}
       onComplete={() => completeTodo(todo.text)}
@@ -54,6 +59,14 @@ function App() {
     </TodoList>
 
       <CreateTodoButton/>
+
+      {openModal && (
+        <Modal>
+          <TodoCreate/>
+          
+        </Modal>
+      )}
+     
       </div>
       
     </>

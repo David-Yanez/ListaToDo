@@ -8,6 +8,8 @@ export const TodoProvider = ({children}) =>{
     
   const {item: todos, saveItem: saveTodos, loading, error} = useLocalStorage('TODOS_V1', [])
   const [searchValue, setSearchValue] =React.useState("");
+
+  const [openModal, setOpenModal] =React.useState(false);
 // !! convierte cualquier dato a true o false (true = cualqueir valor diferente de 0, -1, null, undefine, etc)
   const completedTodos = todos.filter(todo => !!todo.completed).length
 
@@ -16,6 +18,14 @@ export const TodoProvider = ({children}) =>{
 
   const searchedTodos = todos.filter(todo => todo.text.toLowerCase().includes(searchValue.toLowerCase()))
 
+ const addTodo = (text) =>{
+  const  newTodos = [...todos];
+  newTodos.push({
+    text: text,
+    completed: false
+  })
+  saveTodos(newTodos)
+ }
 
   const completeTodo = (text) =>{
     const newItem = [...todos]
@@ -43,7 +53,11 @@ console.log(searchedTodos+ "los todos")
           searchValue,
           setSearchValue,
           completeTodo,
-          deleteTodo}}>
+          deleteTodo, 
+          addTodo,
+          openModal,
+          setOpenModal
+          }}>
 
         {children}
     </TodoContext.Provider>

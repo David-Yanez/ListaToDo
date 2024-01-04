@@ -1,4 +1,4 @@
-button{
+.button-crear {
   /*  position: fixed;
     bottom: 46px;*/
   
@@ -17,7 +17,8 @@ border: none;
 font-size: 1.3rem;
                         }
 
-  button:hover {
+
+.button-crear:hover {
 
  width: 160px;
  height: 40px;
