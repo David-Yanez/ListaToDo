@@ -11,8 +11,13 @@ export const TodoCreate = () => {
 
  const onSubmit = (e)=>{
     e.preventDefault();
-    addTodo(newTodoValue)
-    setOpenModal(false)
+    if(newTodoValue === ''){
+      setOpenModal(false)
+    } else {
+      addTodo(newTodoValue)
+      setOpenModal(false)
+    }
+
   }
 
   const onCancel = ()=>{

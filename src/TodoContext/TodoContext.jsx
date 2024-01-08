@@ -42,7 +42,7 @@ export const TodoProvider = ({children}) =>{
       newItem.splice(todoIndex, 1)
       saveTodos(newItem)
   }
-console.log(searchedTodos+ "los todos")
+
    return (
     <TodoContext.Provider value={{
         loading,

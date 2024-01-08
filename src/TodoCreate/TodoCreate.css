@@ -69,6 +69,7 @@ textarea{
 
 .TodoCrear-button-add{
     margin-left: 20px;
+    width: 78px;
     border-radius: 50px;
     background: #96d9a1;
     box-shadow:  7px 7px 9px #808080,
@@ -76,4 +77,20 @@ textarea{
     
     border: none;
     font-size: 1rem;
+}
+
+.TodoCrear-button-add:hover {
+    width: 80px;
+    height: 22px; 
+       animation: desliza 1s 0.5s 2 linear, desaparece 1s 0.5s 2 linear;
+     
+       cursor: pointer;
+}
+
+.TodoCrear-button-cancel:hover {
+    width: 80px;
+    height: 22px;
+       animation: desliza 1s 0.5s 2 linear, desaparece 1s 0.5s 2 linear;
+      
+       cursor: pointer;
 }

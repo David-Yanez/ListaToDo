@@ -2,6 +2,7 @@ li{
 
 display: flex;
 justify-content: space-around;
+align-items: center;
 
 margin-top: 10px;   
            
@@ -56,3 +57,20 @@ p:nth-child(odd):hover {
  .Icon-delete:hover{
   color: red;
  }
+
+ .Icon {
+  border-radius: 50px;
+  height: 50%;
+  padding: 5px;
+  cursor: pointer;
+  background: #f0f0f0;
+  box-shadow:  7px 7px 9px #808080,
+               -7px -7px 9px #ffffff;
+ }
+
+ .Icon-check:hover{
+    background: #303bcf;
+ }
+  .Icon-delete:hover{
+    background: #ff6161;
+  }
