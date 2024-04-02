@@ -3,12 +3,12 @@ import './TodosLoading.css'
 
 export const TodosLoading = () => {
   return (
-<div class="container">
-  <div class="cargando">
-    <div class="pelotas"></div>
-    <div class="pelotas"></div>
-    <div class="pelotas"></div>
-    <span class="texto-cargando">Cargando...</span>
+<div className="container-loading">
+  <div className="cargando">
+    <div className="pelotas"></div>
+    <div className="pelotas"></div>
+    <div className="pelotas"></div>
+    <span className="texto-cargando">Cargando...</span>
   </div>
 </div>
   )

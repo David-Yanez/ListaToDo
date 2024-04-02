@@ -1,0 +1,8 @@
+.scrooll {
+    height: 430px;
+    overflow-y: scroll;
+  /*  display: flex;
+    flex-direction: column;*/
+    
+
+}

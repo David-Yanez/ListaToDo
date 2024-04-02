@@ -7,10 +7,15 @@ body{
     color: #00b8de;
 }*/
 /* ======================== */
-.container{   
-  display: grid;
-    place-content: center;
-    height: 40vh;
+.container-loading{   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
+  /*display: grid;
+    place-content: center;*/
+    height: 100%;
 }
 .cargando{
     width: 120px;
@@ -19,7 +24,7 @@ body{
     flex-wrap: wrap;
     align-items: flex-end;
     justify-content: space-between;
-    margin: 0 auto; 
+   /* margin: 0 auto; */
 }
 .texto-cargando{ 
   padding-top:20px;
