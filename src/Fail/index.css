@@ -1,0 +1,22 @@
+.container-fail{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.fig-fail{  
+width: 120px;
+height: 120px;
+
+border-radius: 50px;
+box-shadow:  19px 19px 16px #c7c7c7,
+         -19px -19px 16px #ffffff;
+padding: 20px;
+}
+
+.img-fail{
+    width: 100%;
+    height: 100%;
+}

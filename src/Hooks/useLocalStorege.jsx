@@ -21,6 +21,7 @@ function useLocalStorage(itemName, initialValue) {
           setItem(parsedItem)
         }
         setLoading(false)
+       
         } catch(error){
           setError(true)
           setLoading(false)

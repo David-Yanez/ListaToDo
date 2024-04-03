@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from 'react'
+import React, { useContext } from 'react'
 import { TodoCounter } from "./TodoCounter/TodoCounter"
 import { TodoSearch } from "./TodoSearch/TodoSearch"
 import { TodoList } from "./TodoList/TodoList"
@@ -9,14 +9,16 @@ import { TodosLoading } from './TodosLoading/TodosLoading'
 import { TodoContext, TodoProvider } from './TodoContext/TodoContext'
 import { Modal } from './Modal/modal'
 import { TodoCreate } from './TodoCreate/TodoCreate'
+import { FirstTodo } from './FirstTodo/FirstTodo'
+import { Fail } from './Fail/Fail'
 
-const defaultTodos = [
+/*const defaultTodos = [
   {text: 'Cortar cebolla', completed:false},
   {text: 'Cortar carne', completed:true},
   {text: 'Tender la cama', completed:false},
   {text: 'Lavar platos', completed:true},
   {text: 'Cocinar el almuerzo', completed:true},
-]
+] */
 
 /*const StringifiedTodos = JSON.stringify(defaultTodos)
 localStorage.setItem('TODOS_V1', StringifiedTodos)
@@ -32,7 +34,7 @@ function App() {
   completeTodo,
   deleteTodo,
   openModal,
-  setOpenModal
+  searchValue
 } = useContext(TodoContext)
 
   return (
@@ -44,8 +46,8 @@ function App() {
   
       <TodoList>
       {loading && <TodosLoading/>}
-      {error && <p>hubo un error</p>}
-      {(!loading && searchedTodos.length == 0) && <p>Crea tu primer Todo !!</p>}
+      {error && <Fail/>}
+      {(!loading && searchedTodos.length == 0 && searchValue === '') && <FirstTodo/>}
       {/*console.log("app "+ searchedTodos)*/}
       {searchedTodos.map(todo => 
       <TodoItem 
